@@ -6,31 +6,32 @@ import Image from "next/image";
 
 const slides = [
   {
-    title: "Embedded & IoT Engineering Solutions",
-    desc: "End-to-end embedded systems, firmware, hardware and cloud solutions for next-generation products.",
-    image: "/images/hero-embedded.jpg",
+    title: "Aerospace & Defence Engineering Solutions",
+    desc: "Engineering services for safety-critical aerospace and defence systems including embedded software, electronics design, verification and validation.",
+    image: "/images/hero-aero.jpg",
   },
   {
-    title: "DCDC Converters & Power Electronics",
-    desc: "Design and validation of high-efficiency DCDC converters and power electronics systems.",
-    image: "/images/hero-dcdc.jpg",
+    title: "Railway Systems & Safety-Critical Solutions",
+    desc: "Design and development of embedded systems and electronics for railway applications with a focus on reliability, compliance, and long-term support.",
+    image: "/images/hero-railway.jpg",
   },
   {
-    title: "RDPMS & LYNX Systems",
-    desc: "Advanced RDPMS and LYNX-based solutions for industrial and automotive applications.",
-    image: "/images/hero-rdpms.jpg",
+    title: "Automotive Electronics & Embedded Software",
+    desc: "Embedded software, electronics design, and testing services for automotive control systems and next-generation vehicle platforms.",
+    image: "/images/hero-automotive.jpg",
   },
   {
-    title: "SSDAC / mSDAC / HASSDAC Testing",
-    desc: "Comprehensive testing and validation of SSDAC, mSDAC and HASSDAC systems.",
+    title: "Industrial Embedded & IoT Solutions",
+    desc: "End-to-end embedded systems and IoT solutions for industrial applications including firmware development, hardware design, and system integration.",
+    image: "/images/hero-industrial.jpg",
+  },
+  {
+    title: "Testing, Validation & Quality Assurance",
+    desc: "Comprehensive testing and validation services for embedded and safety-critical systems to ensure quality, compliance, and performance.",
     image: "/images/hero-testing.jpg",
   },
-  {
-    title: "VectorCAST-based Software Testing",
-    desc: "Automated unit, integration and coverage testing using VectorCAST for safety-critical software.",
-    image: "/images/hero-vectorcast.jpg",
-  },
 ];
+
 
 export default function HeroSlider() {
   const [index, setIndex] = useState(0);

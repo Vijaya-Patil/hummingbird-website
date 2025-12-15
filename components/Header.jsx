@@ -7,15 +7,13 @@ export default function Header() {
   const [open, setOpen] = useState(false);
 
   const navItems = [
-    { name: "Home", href: "/" },
-    { name: "Services", href: "#services" },
-    { name: "Industries", href: "#industries" },
-    { name: "Process",  href:"#process" },
-    { name: "About", href: "#about" },
-    { name: "Careers", href: "#careers" },
-    { name: "Contact", href: "#contact" },
-  ];
-
+  { name: "Home", href: "/" },
+  { name: "Services", href: "/services" },
+  { name: "Industries", href: "/industries" },
+  { name: "Process", href: "/process" },
+  { name: "About Us", href: "/about" },
+  { name: "Contact", href: "/contact" },
+];
   return (
     <header className="sticky top-0 z-50 bg-white border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">

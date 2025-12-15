@@ -1,43 +1,57 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
-const steps = [
+const processSteps = [
   {
     step: "01",
-    title: "Requirement Analysis",
-    desc: "Understand customer requirements, constraints, standards, and product goals.",
+    title: "Requirements & Analysis",
+    desc: "Detailed analysis of functional, performance, safety, and compliance requirements for safety-critical systems.",
+    image: "/images/process/process-requirements.png",
   },
   {
     step: "02",
     title: "Architecture & Design",
-    desc: "Define system architecture, hardware/software design, and technology stack.",
+    desc: "System and software architecture design including hardware-software partitioning and interface definitions.",
+    image: "/images/process/process-design.png",
   },
   {
     step: "03",
     title: "Development",
-    desc: "Embedded firmware, hardware design, IoT integration, and application development.",
+    desc: "Embedded software, firmware, and electronics development following structured engineering practices.",
+    image: "/images/process/process-development.png",
   },
   {
     step: "04",
-    title: "Testing & Validation",
-    desc: "Unit, integration, system testing including mSDAC, SSDAC, HASSDAC and VectorCAST.",
+    title: "Integration",
+    desc: "Subsystem and system-level integration ensuring correct interaction and real-world behavior.",
+    image: "/images/process/process-integration.png",
   },
   {
     step: "05",
+    title: "Testing & Validation",
+    desc: "Comprehensive verification and validation to ensure quality, reliability, and compliance.",
+    image: "/images/process/process-testing.png",
+  },
+  {
+    step: "06",
     title: "Deployment & Support",
-    desc: "Production deployment, documentation, maintenance, and long-term support.",
+    desc: "Production release, documentation, and long-term lifecycle support.",
+    image: "/images/process/process-deployment.png",
   },
 ];
 
-export default function ProcessTimeline() {
-  return (
-    <section id="process" className="px-6 md:px-10 py-24 bg-[#F8F9FB]">
-      <div className="max-w-6xl mx-auto">
+export default function ProcessTimeline({ showAll = false }) {
+  const visibleSteps = showAll ? processSteps : processSteps.slice(0, 4);
 
-        {/* Section Header */}
+  return (
+    <section id="process" className="bg-white px-6 md:px-10 py-28">
+      <div className="max-w-7xl mx-auto">
+
+        {/* HEADER */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
@@ -47,40 +61,53 @@ export default function ProcessTimeline() {
             Our Engineering Process
           </h2>
           <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
-            A structured, quality-driven approach to deliver reliable
-            and scalable engineering solutions.
+            A structured, visual engineering lifecycle designed for
+            safety-critical and industrial systems.
           </p>
         </motion.div>
 
-        {/* Timeline */}
-        <div className="mt-16 space-y-10">
-          {steps.map((item, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, x: index % 2 === 0 ? -40 : 40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="flex flex-col md:flex-row gap-6 items-start"
-            >
-              {/* Step Number */}
-              <div className="flex-shrink-0">
-                <div className="h-14 w-14 rounded-full bg-[#F47C20] text-white flex items-center justify-center font-bold text-lg">
-                  {item.step}
-                </div>
-              </div>
+        {/* PROCESS STEPS */}
+        <div className="mt-24 space-y-24">
+          {visibleSteps.map((item, index) => {
+            const reverse = index % 2 !== 0;
 
-              {/* Content */}
-              <div className="bg-white p-6 shadow-md border border-gray-100 w-full">
-                <h3 className="text-xl font-semibold text-[#111827]">
-                  {item.title}
-                </h3>
-                <p className="mt-3 text-gray-600">
-                  {item.desc}
-                </p>
-              </div>
-            </motion.div>
-          ))}
+            return (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className={`grid md:grid-cols-2 gap-12 items-center ${
+                  reverse ? "md:flex-row-reverse" : ""
+                }`}
+              >
+                {/* IMAGE */}
+                <div className="relative w-full h-[260px] md:h-[340px]">
+                  <Image
+                    src={item.image}
+                    alt={item.title}
+                    fill
+                    className="object-contain"
+                    unoptimized
+                  />
+                </div>
+
+                {/* TEXT */}
+                <div>
+                  <span className="text-sm font-semibold text-[#F47C20]">
+                    Step {item.step}
+                  </span>
+                  <h3 className="mt-2 text-2xl font-semibold text-[#111827]">
+                    {item.title}
+                  </h3>
+                  <p className="mt-4 text-gray-600 leading-relaxed">
+                    {item.desc}
+                  </p>
+                </div>
+              </motion.div>
+            );
+          })}
         </div>
 
       </div>
