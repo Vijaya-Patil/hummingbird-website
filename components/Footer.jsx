@@ -19,6 +19,12 @@ export default function Footer() {
               electronics, and safety-critical solutions across aerospace,
               railway, and automotive domains.
             </p>
+            <p className="mt-4 text-sm text-gray-600">
+  Quality & Information Security:
+  <br />
+  AS9100 Certified | ISO/IEC 27001 Certified
+</p>
+
           </div>
 
           {/* QUICK LINKS */}
@@ -53,7 +59,7 @@ export default function Footer() {
               Contact
             </h4>
             <p className="mt-4 text-sm text-gray-600">
-              Email: info@hummingbirdteksystems.com
+              Email: hr@hummingbird-tek.com
             </p>
             <p className="mt-2 text-sm text-gray-600">
               Phone: +91 XXXXX XXXXX

@@ -9,9 +9,7 @@ export default function Process() {
 
   return (
     <section id="process" className="px-8 py-20">
-      <h2 className="text-3xl font-bold text-center">
-        Our Engineering Process
-      </h2>
+      
 
       <div className="flex flex-wrap justify-center gap-4 mt-10">
         {steps.map((step, index) => (

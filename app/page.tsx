@@ -3,6 +3,7 @@ import Services from "@/components/Services";
 import ProcessTimeline from "@/components/ProcessTimeline";
 import Industries from "@/components/Industries";
 import WhyUs from "@/components/WhyUs";
+import Certifications from "@/components/Certifications";
 import CTA from "@/components/CTA";
 
 export default function Home() {
@@ -10,9 +11,10 @@ export default function Home() {
     <>
       <HeroSlider />
       <Services />
-      <ProcessTimeline />
+      
       <Industries />
       <WhyUs />
+      <Certifications />
       <CTA />
     </>
   );

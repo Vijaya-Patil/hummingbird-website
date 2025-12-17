@@ -43,9 +43,7 @@ export default function Industries({ showAll = false }) {
           transition={{ duration: 0.6 }}
           className="text-center"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-[#111827]">
-            Industries We Serve
-          </h2>
+          
           <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
             We deliver engineering services across safety-critical and
             industrial domains with a structured and quality-driven approach.
